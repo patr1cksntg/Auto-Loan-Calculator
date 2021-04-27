@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Auto Loan Calculator App</h1>
+  <p>
+    Cars are great but you need to actually buy one with money in order for you to have one. You can either pay up front or if you're a little low on cash you can always do auto loans. But what are auto loans? Auto loaning is an option a person can take when he or she can't pay up front. You basically get into an agreement with a bank or an institution to lend you money but in return you have to pay them back but with interest. The course of payment will be up to you. You can know your auto loan plan on this app
+  </p>
+  <p>
+    Source: https://www.bdo.com.ph/personal/loans/auto-loan/auto-loan-calculator
+  </p>
+  <br />
+<img src="https://cdn.jsdelivr.net/gh/J0-qui/BMI-Calculator@master/BMI%20apple.webp">
+<ion-item>
+    <ion-label>Vehicle Price:</ion-label>
+    <ion-input type="number" [(ngModel)]="vehicleprice"></ion-input>
+</ion-item>
+<ion-item>
+   <ion-label>Loan Term [36, 48 or 60 months]:</ion-label>
+   <ion-input type="number" [(ngModel)]="loanterm"></ion-input>
+</ion-item>
+<ion-item>
+   <ion-label>Downpayment [20, 30, 40%]:</ion-label>
+   <ion-input type="number" [(ngModel)]="downpayment"></ion-input>
+</ion-item>
+
+  <button ion-button color="secondary" (click)="calculateAL()">CALCULATE</button>
+
+<ion-item *ngIf="downpaymentamount">
+  <h2>Your Downpayment Amount is: {{downpaymentamount}}</h2>
+  </ion-item>  
+<ion-item *ngIf="loanamount">
+  <h2>Your Loan Amount is: {{loanamount}}</h2>
+  </ion-item> 
+<ion-item *ngIf="monthlyamortization">
+  <h2>Your Monthly Payment is: {{monthlyamortization}}</h2>
+  </ion-item> 
